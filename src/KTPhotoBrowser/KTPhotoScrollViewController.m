@@ -62,10 +62,6 @@ const CGFloat ktkDefaultToolbarHeight = 44;
      startWithIndex_ = index;
      dataSource_ = [dataSource retain];
      
-     // Make sure to set wantsFullScreenLayout or the photo
-     // will not display behind the status bar.
-     [self setWantsFullScreenLayout:YES];
-
      BOOL isStatusbarHidden = [[UIApplication sharedApplication] isStatusBarHidden];
      [self setStatusbarHidden:isStatusbarHidden];
      
@@ -220,7 +216,7 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    }
    // Then ensure translucency. Without it, the view will appear below rather than under it.  
    [navbar setTranslucent:YES];
-   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
+   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 
    // Set the scroll view's content size, auto-scroll to the stating photo,
    // and setup the other display elements.
